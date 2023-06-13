@@ -4,7 +4,7 @@ This is a responsive client web application where users view articles from diffe
 
 ## Demo
 
-staging: <https://staging-app.panache.services>
+demo: <https://frederickob-slighly-techie-blog.netlify.app>
 
 ## Run Locally
 
@@ -17,7 +17,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd client_porblog_slightly_techietal
+  cd blog_slightly_techie
 ```
 
 Install dependencies
