@@ -60,14 +60,11 @@ To run this project, you will need to add the following environment variables to
 
 `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID`
 
-
-
 ## Tech Stack
 
-* [React 18](https://react.dev)
-* [NextJS 13](https://nextjs.org)
-* [TailwindCSS v3](http://tailwindcss.com/)
-
+- [React 18](https://react.dev)
+- [NextJS 13](https://nextjs.org)
+- [TailwindCSS v3](http://tailwindcss.com/)
 
 ## Usage/Examples
 
@@ -79,7 +76,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Support
 
-For support, email <friedosei@gmail.com> 
+For support, email <friedosei@gmail.com>
 
 ## Authors
 
