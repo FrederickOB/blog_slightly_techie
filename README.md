@@ -4,20 +4,20 @@ This is a responsive client web application where users view articles from diffe
 
 ## Demo
 
-staging: <https://staging-app.panache.services>
+demo: <https://frederickob-slighly-techie-blog.netlify.app>
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/Cater2U-Org/client_portal
+  git clone https://github.com/FrederickOB/blog_slightly_techie
 ```
 
 Go to the project directory
 
 ```bash
-  cd client_portal
+  cd blog_slightly_techie
 ```
 
 Install dependencies

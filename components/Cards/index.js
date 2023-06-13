@@ -20,6 +20,7 @@ export default function Home() {
   const { push } = useRouter();
   const { recentPosts } = useGetRecentPost();
   const { posts } = useGetPosts();
+
   return (
     <main
       className={`flex min-h-screen min-w-screen flex-col items-center justify-between bg-white  text-white`}
@@ -51,7 +52,7 @@ export default function Home() {
                 <PostCard
                   key={post.id}
                   post={post}
-                  onClick={() => push(`/posts/${post?.id}`)}
+                  onClick={() => push(`/posts/${formatText(post?.body)}`)}
                 />
               ))
             : null}

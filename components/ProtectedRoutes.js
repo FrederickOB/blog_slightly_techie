@@ -3,19 +3,19 @@ import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
 
 const ProtectedRoute = ({ children }) => {
-  const publicPages = ["/", "login"];
+  const publicPages = ["/"];
   const { user } = useAuth;
-  const { push, asPath } = useRouter;
+  const { push, asPath } = useRouter();
   const path = asPath?.split("?")[0];
-  const isPublicPath = publicPages.includes(path || "/");
+  const isPublicPath = publicPages.includes(path);
+  console.log(!user && !isPublicPath);
   useEffect(() => {
     if (!user && !isPublicPath) {
-      log("cant accessz");
-      //   push("/login");
+      push("/");
     }
-  }, [push, user, isPublicPath]);
+  }, [user, isPublicPath]);
 
-  return <> {user ? children : null}</>;
+  return <> {user || publicPages.includes(path) ? children : null}</>;
 };
 
 export default ProtectedRoute;

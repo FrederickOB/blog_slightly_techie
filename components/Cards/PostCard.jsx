@@ -57,7 +57,7 @@ const PostCard = ({ post, onClick }) => {
                     <Menu.Item>
                       {({ active }) => (
                         <button
-                          onClick={() => push(`/${post?.id}`)}
+                          onClick={() => push(`/posts/${post?.id}`)}
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
