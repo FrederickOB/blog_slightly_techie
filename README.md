@@ -11,13 +11,13 @@ staging: <https://staging-app.panache.services>
 Clone the project
 
 ```bash
-  git clone https://github.com/Cater2U-Org/client_portal
+  git clone https://github.com/FrederickOB/blog_slightly_techie
 ```
 
 Go to the project directory
 
 ```bash
-  cd client_portal
+  cd client_porblog_slightly_techietal
 ```
 
 Install dependencies
