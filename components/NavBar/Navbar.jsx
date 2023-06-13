@@ -45,7 +45,7 @@ export default function Navbar() {
           {user ? (
             <div className="flex space-x-4">
               <Button
-                onClick={() => push("my-posts")}
+                onClick={() => push("/posts/my-posts")}
                 variation="secondary"
                 customStyles="hidden md:flex"
               >
@@ -90,7 +90,7 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <button
-                            onClick={logout}
+                            onClick={() => push("/posts/my-posts")}
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"

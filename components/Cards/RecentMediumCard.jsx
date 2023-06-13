@@ -4,7 +4,7 @@ import Link from "next/link";
 const RecentMediumCard = ({ post }) => {
   return (
     <Link
-      href={`/posts/${post?.id}`}
+      href={`/posts/${formatText(post?.body)}`}
       className="flex w-full py-4 space-x-4 lg:py-8 lg:px-4 lg:h-1/3"
     >
       <Image

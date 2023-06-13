@@ -4,7 +4,10 @@ import { formatText } from "../../helper/formatText";
 
 const RecentLargeCard = ({ post }) => {
   return (
-    <Link href={`/posts/${post?.id}`} className="relative w-full h-full rounded-xl">
+    <Link
+      href={`/posts/${formatText(post?.body)}`}
+      className="relative w-full h-full rounded-xl"
+    >
       <Image
         src={post?.image || "/default_bg.jpg"}
         width={900}

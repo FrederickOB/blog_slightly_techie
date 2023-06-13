@@ -12,9 +12,9 @@ export default function App({ Component, pageProps }) {
       </Head>
       <AuthContextProvider>
         <Navbar />
-        {/* <ProtectedRoute> */}
-        <Component {...pageProps} />
-        {/* </ProtectedRoute> */}
+        <ProtectedRoute>
+          <Component {...pageProps} />
+        </ProtectedRoute>
       </AuthContextProvider>
     </>
   );
