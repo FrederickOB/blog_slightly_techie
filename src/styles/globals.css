@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glass {
+  /* From https://css.glass */
+  background: rgba(var(--background));
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.8px);
+  -webkit-backdrop-filter: blur(9.8px);
+  /* border: 1px solid rgba(255, 255, 255, 0.12); */
+}
+
+:root {
+  --background: 147, 51, 234, 0.8;
+}
