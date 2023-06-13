@@ -8,7 +8,6 @@ const ProtectedRoute = ({ children }) => {
   const { push, asPath } = useRouter();
   const path = asPath?.split("?")[0];
   const isProtectedPages = protectedPages.includes(path);
-  console.log(!user && isProtectedPages);
   useEffect(() => {
     if (!user && isProtectedPages) {
       push("/");
