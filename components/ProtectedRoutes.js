@@ -3,19 +3,19 @@ import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
 
 const ProtectedRoute = ({ children }) => {
-  const publicPages = ["/"];
+  const protectedPages = ["/posts/my-posts"];
   const { user } = useAuth;
   const { push, asPath } = useRouter();
   const path = asPath?.split("?")[0];
-  const isPublicPath = publicPages.includes(path);
-  console.log(!user && !isPublicPath);
+  const isProtectedPages = protectedPages.includes(path);
+  console.log(!user && isProtectedPages);
   useEffect(() => {
-    if (!user && !isPublicPath) {
+    if (!user && isProtectedPages) {
       push("/");
     }
-  }, [user, isPublicPath]);
+  }, [user, isProtectedPages]);
 
-  return <> {user || publicPages.includes(path) ? children : null}</>;
+  return <> {user || !isProtectedPages ? children : null}</>;
 };
 
 export default ProtectedRoute;
