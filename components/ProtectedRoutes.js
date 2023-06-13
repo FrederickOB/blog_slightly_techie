@@ -3,11 +3,10 @@ import { useAuth } from "../context/AuthContext";
 import { useRouter } from "next/router";
 
 const ProtectedRoute = ({ children }) => {
-  const protectedPages = ["/posts/my-posts"];
   const { user } = useAuth;
   const { push, asPath } = useRouter();
-  const path = asPath?.split("?")[0];
-  const isProtectedPages = protectedPages.includes(path);
+
+  const isProtectedPages = asPath === "/posts/my-posts";
   useEffect(() => {
     if (!user && isProtectedPages) {
       push("/");
