@@ -22,12 +22,13 @@ export default function Navbar() {
   const logout = async () => {
     setUser(null);
     await signOut(auth);
+    push;
   };
   return (
     <>
       <PostModal setIsOpen={setIsOpen} isOpen={isOpen} />
       <div className="fixed top-0 z-40 flex justify-center w-screen font-Montserrat">
-        <nav className="relative z-10 flex flex-row flex-wrap items-center justify-between w-full px-6 py-2 glass ">
+        <nav className="relative z-10 flex flex-row flex-wrap items-center justify-between w-full px-6 py-4 glass ">
           <div className="flex items-center justify-start space-x-3">
             <Image
               src={"/logo.png"}
@@ -139,10 +140,7 @@ export default function Navbar() {
             </div>
           ) : (
             <div>
-              <button
-                className="flex items-center px-2 py-1 space-x-2 text-white border-2 rounded-xl"
-                onClick={login}
-              >
+              <Button variation="secondary" customStyles="flex" onClick={login}>
                 <p>sign in with</p>
                 <svg
                   width="12px"
@@ -167,7 +165,7 @@ export default function Navbar() {
                     d="M5.27698177,14.2678769 C5.03832634,13.556323 4.90909091,12.7937589 4.90909091,12 C4.90909091,11.2182781 5.03443647,10.4668121 5.26620003,9.76452941 L1.23999023,6.65002441 C0.43658717,8.26043162 0,10.0753848 0,12 C0,13.9195484 0.444780743,15.7301709 1.23746264,17.3349879 L5.27698177,14.2678769 Z"
                   />
                 </svg>
-              </button>
+              </Button>
             </div>
           )}
         </nav>

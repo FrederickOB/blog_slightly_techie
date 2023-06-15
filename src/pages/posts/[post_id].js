@@ -28,8 +28,8 @@ const PostId = () => {
             className="object-cover w-full h-full lg:rounded-xl"
           />
           <div className="absolute top-0 z-10 flex flex-col items-start justify-end w-full h-full p-8 lg:rounded-xl bg-gradient-to-t from-black to-transparent via-black/80 lg:via-black/50">
-            <div className="max-h-[50%]  w-full space-y-4">
-              <h3 className="text-2xl font-semibold text-purple-600 break-words lg:text-7xl">
+            <div className="lg:max-h-[50%]  w-full space-y-4">
+              <h3 className="text-2xl font-semibold text-purple-600 break-words lg:text-6xl">
                 {post?.title}
               </h3>
 

@@ -67,6 +67,7 @@ const PostModal = ({ isOpen, setIsOpen, post }) => {
                   name="title"
                   id="title"
                   placeholder="Title"
+                  maxLength={65}
                   value={field.value}
                   onChange={field.onChange}
                 />

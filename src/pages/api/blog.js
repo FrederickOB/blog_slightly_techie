@@ -51,29 +51,6 @@ export const useGetRecentPost = () => {
   return { recentPosts };
 };
 
-export const useGetPost = (id) => {
-  const [post, setPost] = useState(null);
-
-  useEffect(() => {
-    const unsub = async () => {
-      if (id) {
-        await getDoc(doc(db, "blogs", id))
-          .then((res) => {
-            if (res.exists()) {
-              // Convert to City object
-              const data = res.data();
-              console.log("data", data);
-              setPost(data);
-            }
-          })
-          .catch((err) => console.log(err));
-      }
-    };
-    return () => unsub();
-  }, [id]);
-
-  return { post };
-};
 export const getPost = async (id) => {
   if (id) {
     const post = await getDoc(doc(db, "blogs", id));
