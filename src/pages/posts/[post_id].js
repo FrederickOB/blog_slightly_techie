@@ -4,11 +4,12 @@ import React from "react";
 import { useGetPost } from "../api/blog";
 import { formatText } from "../../../helper/formatText";
 
-
 const PostId = () => {
   const { query } = useRouter();
   const { post_id } = query;
   const { post } = useGetPost(post_id);
+
+  console.log("post", post);
   return (
     <div className="w-screen min-h-screen">
       <div className="h-[50vh] bg-purple-600 w-screen hidden lg:flex"></div>
