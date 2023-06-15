@@ -6,10 +6,6 @@ const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   const { push, asPath } = useRouter();
   const isProtectedPages = asPath === "/posts/my-posts";
-  console.log("user", user);
-  // console.log(!user && isProtectedPages);
-  console.log("!user", !user);
-  console.log("isProtectedPages", isProtectedPages);
   useEffect(() => {
     if (!user && isProtectedPages) {
       push("/");
