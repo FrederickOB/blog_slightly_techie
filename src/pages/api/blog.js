@@ -57,14 +57,22 @@ export const useGetPost = (id) => {
   const docRef = doc(db, "blogs", id);
   useEffect(() => {
     const unsub = async () => {
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        // Convert to City object
-        const data = docSnap.data();
-        setPost(data);
-      } else {
-        console.log("No such document!");
-      }
+      await getDoc(docRef)
+        .then((res) => {
+          if (res.exists()) {
+            // Convert to City object
+            const data = res.data();
+            setPost(data);
+          }
+        })
+        .catch((err) => console.log(err));
+      // if (docSnap.exists()) {
+      //   // Convert to City object
+      //   const data = docSnap.data();
+      //   setPost(data);
+      // } else {
+      //   console.log("No such document!");
+      // }
     };
     return () => unsub();
   }, []);
