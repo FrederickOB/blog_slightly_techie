@@ -52,27 +52,29 @@ export const useGetRecentPost = () => {
 };
 
 export const useGetPost = (id) => {
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState(null);
 
-  const docRef = doc(db, "blogs", id);
   useEffect(() => {
     const unsub = async () => {
-      await getDoc(docRef)
-        .then((res) => {
-          if (res.exists()) {
-            // Convert to City object
-            const data = res.data();
-            setPost(data);
-          }
-        })
-        .catch((err) => console.log(err));
-      // if (docSnap.exists()) {
-      //   // Convert to City object
-      //   const data = docSnap.data();
-      //   setPost(data);
-      // } else {
-      //   console.log("No such document!");
-      // }
+      if (id) {
+        await getDoc(doc(db, "blogs", id))
+          .then((res) => {
+            if (res.exists()) {
+              // Convert to City object
+              const data = res.data();
+              console.log("data", data);
+              setPost(data);
+            }
+          })
+          .catch((err) => console.log(err));
+        // if (docSnap.exists()) {
+        //   // Convert to City object
+        //   const data = docSnap.data();
+        //   setPost(data);
+        // } else {
+        //   console.log("No such document!");
+        // }
+      }
     };
     return () => unsub();
   }, [id]);
@@ -124,6 +126,7 @@ export const updatePost = async (id, payload) => {
     updatedOn: serverTimestamp(),
   });
 };
+
 export const deletePost = async (id) => {
   await deleteDoc(doc(db, "blogs", id));
 };
