@@ -75,7 +75,7 @@ export const useGetPost = (id) => {
       // }
     };
     return () => unsub();
-  }, []);
+  }, [id]);
 
   return { post };
 };
