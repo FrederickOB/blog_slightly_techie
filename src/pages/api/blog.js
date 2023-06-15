@@ -59,6 +59,7 @@ export const useGetPost = (id) => {
       if (id) {
         await getDoc(doc(db, "blogs", id))
           .then((res) => {
+            console.log(res);
             if (res.exists()) {
               // Convert to City object
               const data = res.data();
