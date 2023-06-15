@@ -5,8 +5,10 @@ import { useRouter } from "next/router";
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth;
   const { push, asPath } = useRouter();
-
   const isProtectedPages = asPath === "/posts/my-posts";
+  console.log(!user && isProtectedPages);
+  console.log(!user);
+  console.log(isProtectedPages);
   useEffect(() => {
     if (!user && isProtectedPages) {
       push("/");
