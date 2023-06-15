@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { getPost, useGetPost } from "../api/blog";
+import { getPost } from "../api/blog";
 import { formatText } from "../../../helper/formatText";
 
 const PostId = () => {

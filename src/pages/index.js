@@ -1,20 +1,8 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import {
-  getPosts,
-  getRecentPost,
-  useGetPosts,
-  useGetRecentPost,
-} from "./api/blog";
+import { useGetPosts, useGetRecentPost } from "./api/blog";
 import RecentSection from "../../components/Recents/RecentSection";
 import PostCard from "../../components/Cards/PostCard";
 import Heading from "../../components/Heading/Heading";
-import { useAuth } from "../../context/AuthContext";
 import { useRouter } from "next/router";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { push } = useRouter();

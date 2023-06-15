@@ -1,7 +1,7 @@
 import Heading from "../../../components/Heading/Heading";
 import { useAuth } from "../../../context/AuthContext";
 import PostCard from "../../../components/Cards/PostCard";
-import { deletePost, useGetPostsBySpecificUser } from "../api/blog";
+import { useGetPostsBySpecificUser } from "../api/blog";
 import Image from "next/image";
 
 const Posts = () => {

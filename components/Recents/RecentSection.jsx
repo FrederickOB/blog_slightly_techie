@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import RecentLargeCard from "./RecentLargeCard";
 import RecentMediumCard from "./RecentMediumCard";
 

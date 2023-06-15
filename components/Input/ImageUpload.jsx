@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { PhotoIcon } from "@heroicons/react/24/outline";
-import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import Image from "next/image";
 
 const ImageUpload = ({ value, onChange, label, name, id, error }) => {

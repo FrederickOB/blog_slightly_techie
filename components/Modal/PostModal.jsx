@@ -5,6 +5,7 @@ import ImageUpload from "../Input/ImageUpload";
 import Modal from "./Modal";
 import { createPost, uploadPostImage, updatePost } from "@/pages/api/blog";
 import { useAuth } from "../../context/AuthContext";
+import { formatText } from "../../helper/formatText";
 
 {
   /*TODO: Firebase store failing to return image url sometimes... look into it */
@@ -82,7 +83,7 @@ const PostModal = ({ isOpen, setIsOpen, post }) => {
               name="body"
               control={control}
               rules={{ required: "please input article body" }}
-              defaultValue={post?.body || ""}
+              defaultValue={formatText(post?.body) || ""}
               render={({ field }) => (
                 <TextArea
                   placeholder="your creativity starts here..."
