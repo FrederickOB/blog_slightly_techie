@@ -1,15 +1,20 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React from "react";
-import { useGetPost } from "../api/blog";
+import React, { useEffect, useState } from "react";
+import { getPost, useGetPost } from "../api/blog";
 import { formatText } from "../../../helper/formatText";
 
 const PostId = () => {
   const { query } = useRouter();
   const { post_id } = query;
-  const { post } = useGetPost(post_id);
+  const [post, setPost] = useState({});
 
-  console.log("post", post);
+  useEffect(() => {
+    if (post_id) {
+      getPost(post_id).then((res) => setPost(res));
+    }
+  }, []);
+
   return (
     <div className="w-screen min-h-screen">
       <div className="h-[50vh] bg-purple-600 w-screen hidden lg:flex"></div>

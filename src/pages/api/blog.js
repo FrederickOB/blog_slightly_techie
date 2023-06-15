@@ -59,7 +59,6 @@ export const useGetPost = (id) => {
       if (id) {
         await getDoc(doc(db, "blogs", id))
           .then((res) => {
-            console.log(res);
             if (res.exists()) {
               // Convert to City object
               const data = res.data();
@@ -68,19 +67,26 @@ export const useGetPost = (id) => {
             }
           })
           .catch((err) => console.log(err));
-        // if (docSnap.exists()) {
-        //   // Convert to City object
-        //   const data = docSnap.data();
-        //   setPost(data);
-        // } else {
-        //   console.log("No such document!");
-        // }
       }
     };
     return () => unsub();
   }, [id]);
 
   return { post };
+};
+export const getPost = async (id) => {
+  if (id) {
+    const post = await getDoc(doc(db, "blogs", id));
+    if (post.exists()) {
+      // Convert to City object
+      const data = post.data();
+      return data;
+    } else {
+      console.log("No such document!");
+    }
+
+    return post;
+  }
 };
 export const useGetPosts = () => {
   const [posts, setPosts] = useState([]);
